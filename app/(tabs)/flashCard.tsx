@@ -19,9 +19,9 @@ export default function CreateFlashcardScreen() {
       quality: 1,
     });
 
-    if (!result.cancelled) {
-      setImage(result.url);
-    }
+    // if (!result.canceled) {
+    //     setImage(result.assets[0].uri);   
+    //  }
   };
 
   // Function to start/stop audio recording
@@ -35,9 +35,9 @@ export default function CreateFlashcardScreen() {
         });
 
         const newRecording = new Audio.Recording();
-        await newRecording.prepareToRecordAsync(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY);
-        await newRecording.startAsync();
-        setRecording(newRecording);
+        // await newRecording.prepareToRecordAsync(Audio.RECORDING_OPTIONS_PRESET_HIGH_QUALITY);
+        // await newRecording.startAsync();
+        // setRecording(newRecording);
       } else {
         console.log('Permission to record audio denied');
       }
@@ -48,9 +48,9 @@ export default function CreateFlashcardScreen() {
 
   const stopRecording = async () => {
     try {
-      await recording.stopAndUnloadAsync();
-      const uri = recording.getURI();
-      setAudioUri(uri);
+    //   await recording.stopAndUnloadAsync();
+    //   const uri = recording.getURI();
+    //   setAudioUri(uri);
       setRecording(null);
     } catch (err) {
       console.error('Failed to stop recording', err);
